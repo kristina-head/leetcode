@@ -9,7 +9,7 @@ class Solution {
     int count = 0; // O(1)
     for (int k = 0; k < S.length(); k++) { // O(N)
       if (jewels.contains(S.charAt(k))) { // O(1)
-        count++;
+        count++; // O(1)
       }
     }
     
