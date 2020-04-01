@@ -8,14 +8,14 @@
  * }
  */
 class Solution {
-    public int rangeSumBST(TreeNode root, int L, int R) {
-        if (root == null) { 
-            return 0; 
+    public int rangeSumBST(TreeNode root, int L, int R) { // O(N)
+        if (root == null) { // O(1)
+            return 0; // O(1)
         } 
-        if (root.val > R) { 
+        if (root.val > R) { // O(1)
             return rangeSumBST(root.left, L, R);
         }
-        if (root.val < L) {
+        if (root.val < L) { // O(1)
             return rangeSumBST(root.right, L, R);
         }
         return root.val + rangeSumBST(root.left, L, R) + rangeSumBST(root.right, L, R);
