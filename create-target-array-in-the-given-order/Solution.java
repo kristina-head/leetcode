@@ -1,6 +1,6 @@
 class Solution {
     public int[] createTargetArray(int[] nums, int[] index) { // O(N*M)
-        List<Integer> list = new ArrayList<Integer>(); // O(N)
+        List<Integer> list = new ArrayList<Integer>(); // O(1)
         
         for (int i = 0; i < index.length; i++) { // O(N*M)
             list.add(index[i], nums[i]); // O(M)
