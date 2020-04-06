@@ -8,7 +8,7 @@
  * }
  */
 class Solution { // O(N)
-    int sum = 0; // O(1)
+    private int sum = 0; // O(1)
     
     public TreeNode bstToGst(TreeNode root) { // O(N)
         sumNodes(root); // O(N)
