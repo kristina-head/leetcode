@@ -12,9 +12,6 @@ class Solution {
         
         Set<Integer> values = new HashSet<>(frequency.values()); // O(M)
         
-        if (values.size() != frequency.values().size()) { // O(1)
-            return false; // O(1)
-        }
-        return true; // O(1)
+        return values.size() == frequency.values().size(); // O(1)
     }
 }
