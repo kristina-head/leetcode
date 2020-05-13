@@ -15,6 +15,10 @@
  */
 
 class Solution {
+    public TreeNode constructMaximumBinaryTree(int[] nums) { // O(N^2)
+        return construct(nums, 0, nums.length); // O(N^2)
+    }
+    
     private int findMax(int[] nums, int left, int right) { // O(N)
         int max = left; // O(1)
         
@@ -38,9 +42,5 @@ class Solution {
         root.right = construct(nums, max+1, right); // O(N^2)
         
         return root; // O(1)
-    }
-    
-    public TreeNode constructMaximumBinaryTree(int[] nums) { // O(N^2)
-        return construct(nums, 0, nums.length); // O(N^2)
     }
 }
