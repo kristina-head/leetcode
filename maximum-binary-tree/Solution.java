@@ -15,8 +15,8 @@
  */
 
 class Solution {
-    public TreeNode constructMaximumBinaryTree(int[] nums) { // O(N^2)
-        return construct(nums, 0, nums.length); // O(N^2)
+    public TreeNode constructMaximumBinaryTree(int[] nums) { // O(N log N)
+        return construct(nums, 0, nums.length); // O(N log N)
     }
     
     private int findMax(int[] nums, int left, int right) { // O(N)
@@ -31,15 +31,15 @@ class Solution {
         return max; // O(1)
     }
     
-    private TreeNode construct(int[] nums, int left, int right) { // O(N^2)
+    private TreeNode construct(int[] nums, int left, int right) { // O(N log N)
         if (left == right) { // O(1)
             return null; // O(1)
         }
         
         int max = findMax(nums, left, right); // O(N)
         TreeNode root = new TreeNode(nums[max]); // O(1)
-        root.left = construct(nums, left, max); // O(N^2)
-        root.right = construct(nums, max+1, right); // O(N^2)
+        root.left = construct(nums, left, max); // O(log N)
+        root.right = construct(nums, max+1, right); // O(log N)
         
         return root; // O(1)
     }
