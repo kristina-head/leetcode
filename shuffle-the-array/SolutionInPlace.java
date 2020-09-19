@@ -1,4 +1,4 @@
-class Solution {
+class SolutionInPlace {
     public int[] shuffle(int[] nums, int n) { // O(N*M)
         int temp; // O(1)
         
