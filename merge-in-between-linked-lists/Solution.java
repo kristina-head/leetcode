@@ -1,7 +1,7 @@
 class Solution {
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) { // O(N)
-        ListNode end = getPosition(list1, 0, b+1); // O(N)
-        getPosition(list1, 0, a-1).next = list2; // O(N)
+        ListNode end = getPosition(list1, 0, b+1); // O(B)
+        getPosition(list1, 0, a-1).next = list2; // O(A)
         getLast(list2).next = end; // O(N)
         
         return list1; // O(1)
