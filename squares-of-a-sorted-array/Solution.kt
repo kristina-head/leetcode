@@ -1,11 +1,11 @@
 class Solution {
-    fun sortedSquares(nums: IntArray): IntArray {
-        for (i in nums.indices) {
-            nums[i] = nums[i] * nums[i]
+    fun sortedSquares(nums: IntArray): IntArray { // O(N log N)
+        for (i in nums.indices) { // O(N)
+            nums[i] = nums[i] * nums[i] // O(1)
         }
         
-        nums.sort()
+        nums.sort() // O(N log N)
         
-        return nums
+        return nums // O(1)
     }
 }
