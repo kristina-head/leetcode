@@ -1,16 +1,16 @@
 class Solution {
-    fun moveZeroes(nums: IntArray): Unit {
-        var i = 0
+    fun moveZeroes(nums: IntArray): Unit { // O(N)
+        var i = 0 // O(1)
         
-        for (j in nums.indices) {
-            if (nums[j] != 0) {
-                nums[i] = nums[j]
+        for (j in nums.indices) { // O(N)
+            if (nums[j] != 0) { // O(1)
+                nums[i] = nums[j] // O(1)
                 
-                if (j != i) {
-                    nums[j] = 0
+                if (j != i) { // O(1)
+                    nums[j] = 0 // O(1)
                 }
                 
-                i++
+                i++ // O(1)
             }
         }
     }
