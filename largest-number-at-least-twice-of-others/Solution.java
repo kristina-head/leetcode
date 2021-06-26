@@ -10,10 +10,8 @@ class Solution {
             }
         }
         
-        for (int i = 0; i < nums.length; i++) { // O(N)
-            if (nums[i] != max && max < nums[i] * 2) { // O(1)
-                return -1; // O(1)
-            }
+        for (int num : nums) { // O(N)
+            if (num != max && max < num * 2) return -1; // O(1)
         }
         
         return maxIndex; // O(1)
