@@ -1,13 +1,13 @@
 class Solution {
-    public int[] getConcatenation(int[] nums) {
-        int n = nums.length;
-        int[] ans = new int[n * 2];
+    public int[] getConcatenation(int[] nums) { // O(N)
+        int n = nums.length; // O(1)
+        int[] ans = new int[n * 2]; // O(N)
         
-        for (int i = 0; i < n; i++) {
-            ans[i] = nums[i];
-            ans[i + n] = nums[i];
+        for (int i = 0; i < n; i++) { // O(N)
+            ans[i] = nums[i]; // O(1)
+            ans[i + n] = nums[i]; // O(1)
         }
         
-        return ans;
+        return ans; // O(1)
     }
 }
