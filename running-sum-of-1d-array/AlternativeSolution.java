@@ -1,13 +1,13 @@
 class AlternativeSolution {
-    public int[] runningSum(int[] nums) {
-        int numsLength = nums.length;
-        int[] runningSum = new int[numsLength];
-        runningSum[0] = nums[0];
+    public int[] runningSum(int[] nums) { // O(N)
+        int numsLength = nums.length; // O(1)
+        int[] runningSum = new int[numsLength]; // O(N)
+        runningSum[0] = nums[0]; // O(1)
         
-        for (int i = 1; i < numsLength; i++) {
-            runningSum[i] = runningSum[i-1] + nums[i];
+        for (int i = 1; i < numsLength; i++) { // O(N)
+            runningSum[i] = runningSum[i-1] + nums[i]; // O(1)
         }
         
-        return runningSum;
+        return runningSum; // O(1)
     }
 }
