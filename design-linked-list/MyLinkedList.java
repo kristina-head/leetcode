@@ -2,12 +2,12 @@ class MyLinkedList {
     Node head;
     int size;
 
-    public MyLinkedList() {
+    public MyLinkedList() { // O(1)
         this.head = null;
         this.size = 0;
     }
     
-    public int get(int index) {
+    public int get(int index) { // O(N) where N is the no. of nodes in the List
         if (index >= size) return -1;
         
         Node node = head;
@@ -21,14 +21,14 @@ class MyLinkedList {
         return node.val;
     }
     
-    public void addAtHead(int val) {
+    public void addAtHead(int val) { // O(1)
         Node node = new Node(val);
         node.next = head;
         head = node;
         size++;
     }
     
-    public void addAtTail(int val) {
+    public void addAtTail(int val) { // O(N) where N is the no. of nodes in the List
         if (head == null) {
             addAtHead(val);
         } else {
@@ -44,7 +44,7 @@ class MyLinkedList {
         }
     }
     
-    public void addAtIndex(int index, int val) {
+    public void addAtIndex(int index, int val) { // O(N) where N is the no. of nodes in the List
         if (index > size) return;
         
         if (index == 0) {
@@ -66,7 +66,7 @@ class MyLinkedList {
         }
     }
     
-    public void deleteAtIndex(int index) {
+    public void deleteAtIndex(int index) { // O(N) where N is the no. of nodes in the List
         if (index >= size) return;
         
         if (index == 0) {
@@ -90,7 +90,7 @@ class MyLinkedList {
         int val;
         Node next;
 
-        public Node(int val) {
+        public Node(int val) { // O(1)
             this.val = val;
         }
     }
