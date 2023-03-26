@@ -10,17 +10,17 @@
  * }
  */
 public class Solution {
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null) return null;
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) { // O(A + B) where A is the no. of ListNodes in headA and B is the no. of ListNodes in headB
+        if (headA == null || headB == null) return null; // O(1)
         
-        ListNode nodeA = headA;
-        ListNode nodeB = headB;
+        ListNode nodeA = headA; // O(1)
+        ListNode nodeB = headB; // O(1)
         
-        while (nodeA != nodeB) {
-            nodeA = (nodeA == null) ? headB : nodeA.next;
-            nodeB = (nodeB == null) ? headA : nodeB.next;
+        while (nodeA != nodeB) { // O(A + B)
+            nodeA = (nodeA == null) ? headB : nodeA.next; // O(1)
+            nodeB = (nodeB == null) ? headA : nodeB.next; // O(1)
         }
         
-        return nodeA;
+        return nodeA; // O(1)
     }
 }
