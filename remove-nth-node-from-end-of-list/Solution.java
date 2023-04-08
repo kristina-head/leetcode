@@ -9,23 +9,23 @@
  * }
  */
 class Solution {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode newHead = new ListNode(0, head);
-        ListNode left = newHead;
-        ListNode right = head;
+    public ListNode removeNthFromEnd(ListNode head, int n) { // O(M) where M is the number of ListNodes in the List
+        ListNode newHead = new ListNode(0, head); // O(1)
+        ListNode left = newHead; // O(1)
+        ListNode right = head; // O(1)
         
-        while (n > 0) {
-            right = right.next;
-            n--;
+        while (n > 0) { // O(N)
+            right = right.next; // O(1)
+            n--; // O(1)
         }
         
-        while (right != null) {
-            left = left.next;
-            right = right.next;
+        while (right != null) { // O(M - N)
+            left = left.next; // O(1)
+            right = right.next; // O(1)
         }
         
-        left.next = left.next.next;
+        left.next = left.next.next; // O(1)
         
-        return newHead.next;
+        return newHead.next; // O(1)
     }
 }
