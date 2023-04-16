@@ -9,22 +9,22 @@
  * }
  */
 class Solution {
-    public ListNode oddEvenList(ListNode head) {
-        if (head == null) return head; 
+    public ListNode oddEvenList(ListNode head) { // O(N) where N is the number of ListNodes in the list
+        if (head == null) return head; // O(1)
 
-        ListNode odd = head;
-        ListNode even = head.next;
-        ListNode evenHead = even;
+        ListNode odd = head; // O(1)
+        ListNode even = head.next; // O(1)
+        ListNode evenHead = even; // O(1)
 
-        while (even != null && even.next != null) {
-            odd.next = even.next;
-            odd = odd.next;
-            even.next = odd.next;
-            even = even.next;
+        while (even != null && even.next != null) { // O(N)
+            odd.next = even.next; // O(1)
+            odd = odd.next; // O(1)
+            even.next = odd.next; // O(1)
+            even = even.next; // O(1)
         }
 
-        odd.next = evenHead;
+        odd.next = evenHead; // O(1)
 
-        return head;
+        return head; // O(1)
     }
 }
