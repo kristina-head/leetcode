@@ -1,18 +1,18 @@
 class Solution {
-    public boolean checkIfPangram(String sentence) {
-        if (sentence.length() < 26) return false;
+    public boolean checkIfPangram(String sentence) { // O(N)
+        if (sentence.length() < 26) return false; // O(1)
 
-        boolean[] isPresent = new boolean[26];
+        boolean[] isPresent = new boolean[26]; // O(1)
 
-        for (int i = 0; i < sentence.length(); i++) {
-            int letter = sentence.charAt(i) - 97;
-            isPresent[letter] = true;
+        for (int i = 0; i < sentence.length(); i++) { // O(N)
+            int letter = sentence.charAt(i) - 97; // O(1)
+            isPresent[letter] = true; // O(1)
         }
 
-        for (int i = 0; i < isPresent.length; i++) {
-            if (!isPresent[i]) return false;
+        for (int i = 0; i < isPresent.length; i++) { // O(26) -> O(1)
+            if (!isPresent[i]) return false; // O(1)
         }
 
-        return true;
+        return true; // O(1)
     }
 }
