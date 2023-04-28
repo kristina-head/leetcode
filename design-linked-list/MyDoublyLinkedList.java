@@ -3,7 +3,7 @@ class MyDoublyLinkedList {
     Node tail;
     int size;
 
-    public MyLinkedList() {
+    public MyLinkedList() { // O(1)
         this.head = new Node(0);
         this.tail = new Node(0);
         this.head.next = tail;
@@ -11,7 +11,7 @@ class MyDoublyLinkedList {
         this.size = 0;
     }
     
-    public int get(int index) {
+    public int get(int index) { // O(N) where N is the length of the LinkedList
         if (index < 0 || index >= size) return -1;
         
         Node node = head;
@@ -23,15 +23,15 @@ class MyDoublyLinkedList {
         return node.val;
     }
     
-    public void addAtHead(int val) {
+    public void addAtHead(int val) { // O(1)
         addAtIndex(0, val);
     }
     
-    public void addAtTail(int val) {
+    public void addAtTail(int val) { // O(N) where N is the length of the LinkedList
         addAtIndex(size, val);
     }
     
-    public void addAtIndex(int index, int val) {
+    public void addAtIndex(int index, int val) { // O(N) where N is the length of the LinkedList
         if (index < 0 || index > size) return;
 
         Node node = head;
@@ -48,7 +48,7 @@ class MyDoublyLinkedList {
         size++;
     }
     
-    public void deleteAtIndex(int index) {
+    public void deleteAtIndex(int index) { // O(N) where N is the length of the LinkedList
         if (index < 0 || index >= size) return;
         
         Node node = head;
@@ -67,7 +67,7 @@ class MyDoublyLinkedList {
         Node next;
         Node prev;
 
-        public Node(int val) {
+        public Node(int val) { // O(1)
             this.val = val;
             this.next = null;
             this.prev = null;
