@@ -4,14 +4,14 @@ class MyCircularQueue {
     int rear;
     int size;
     
-    public MyCircularQueue(int k) {
+    public MyCircularQueue(int k) { // O(1)
         this.queue = new int[k];
         this.front = -1;
         this.rear = -1;
         this.size = k;
     }
     
-    public boolean enQueue(int value) {     
+    public boolean enQueue(int value) { // O(1)
         if (isFull()) return false;
     
         if (isEmpty()) front = 0;
@@ -22,7 +22,7 @@ class MyCircularQueue {
         return true;
     }
     
-    public boolean deQueue() {
+    public boolean deQueue() { // O(1)
         if (isEmpty()) return false;
         
         if (front == rear) {
@@ -36,19 +36,19 @@ class MyCircularQueue {
         return true;
     }
     
-    public int Front() {
+    public int Front() { // O(1)
         return isEmpty() ? -1 : queue[front];
     }
     
-    public int Rear() {
+    public int Rear() { // O(1)
         return isEmpty() ? -1 : queue[rear];
     }
     
-    public boolean isEmpty() {
+    public boolean isEmpty() { // O(1)
         return front == -1;
     }
     
-    public boolean isFull() {
+    public boolean isFull() { // O(1)
         return ((rear + 1) % size) == front;
     }
 }
