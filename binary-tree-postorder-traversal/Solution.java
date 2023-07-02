@@ -14,18 +14,18 @@
  * }
  */
 class Solution {
-    public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        dfs(root, result);
+    public List<Integer> postorderTraversal(TreeNode root) { // O(N)
+        List<Integer> result = new ArrayList<>(); // O(1)
+        dfs(root, result); // O(N)
         
-        return result;
+        return result; // O(1)
     }
     
-    private void dfs(TreeNode current, List<Integer> result) {
-        if (current == null) return;
+    private void dfs(TreeNode current, List<Integer> result) { // O(N)
+        if (current == null) return; // O(1)
         
-        if (current.left != null) dfs(current.left, result);
-        if (current.right != null) dfs(current.right, result);
-        result.add(current.val);
+        if (current.left != null) dfs(current.left, result);  // O(N / 2)
+        if (current.right != null) dfs(current.right, result); // O(N / 2)
+        result.add(current.val); // O(1)
     }
 }
