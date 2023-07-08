@@ -14,21 +14,21 @@
  * }
  */
 class RecursiveSolution {
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> levels = new ArrayList<>();
+    public List<List<Integer>> levelOrder(TreeNode root) { // O(N)
+        List<List<Integer>> levels = new ArrayList<>(); // O(1)
         
-        addLevels(root, 0, levels);
+        addLevels(root, 0, levels); // O(N)
         
-        return levels;
+        return levels; // O(1)
     }
     
-    private void addLevels(TreeNode current, int index, List<List<Integer>> levels) {
-        if (current == null) return;
-        if (levels.size() == index) levels.add(new ArrayList<>());
+    private void addLevels(TreeNode current, int index, List<List<Integer>> levels) { // O(N)
+        if (current == null) return; // O(1)
+        if (levels.size() == index) levels.add(new ArrayList<>()); // O(1)
 
-        levels.get(index).add(current.val);
+        levels.get(index).add(current.val); // O(1)
 
-        addLevels(current.left, index + 1, levels);
-        addLevels(current.right, index + 1, levels);
+        addLevels(current.left, index + 1, levels); // O(N / 2)
+        addLevels(current.right, index + 1, levels); // O(N / 2)
     }
 }
