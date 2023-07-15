@@ -14,12 +14,12 @@
  * }
  */
 class Solution {
-    public int maxDepth(TreeNode root) {
-        if (root == null) return 0;
+    public int maxDepth(TreeNode root) { // O(N)
+        if (root == null) return 0; // O(1)
        
-        int leftDepth = maxDepth(root.left);
-        int rightDepth = maxDepth(root.right);
+        int leftDepth = maxDepth(root.left); // O(N / 2)
+        int rightDepth = maxDepth(root.right); // O(N / 2)
         
-        return Math.max(leftDepth, rightDepth) + 1;
+        return Math.max(leftDepth, rightDepth) + 1; // O(1)
     }
 }
