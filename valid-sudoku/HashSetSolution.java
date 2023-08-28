@@ -1,35 +1,35 @@
 class HashSetSolution {
-    public boolean isValidSudoku(char[][] board) {
-        int n = 9;
+    public boolean isValidSudoku(char[][] board) { // O(N * N) -> O(1) as N is always equal to 9
+        int n = 9; // O(1)
       
-        List<HashSet<Character>> grids = new ArrayList<>(n);
-        List<HashSet<Character>> rows = new ArrayList<>(n);
-        List<HashSet<Character>> cols = new ArrayList<>(n);
+        List<HashSet<Character>> grids = new ArrayList<>(n); // O(1)
+        List<HashSet<Character>> rows = new ArrayList<>(n); // O(1)
+        List<HashSet<Character>> cols = new ArrayList<>(n); // O(1)
         
-        for (int i = 0; i < n; i++) {
-            grids.add(new HashSet<>());
-            rows.add(new HashSet<>());
-            cols.add(new HashSet<>());
+        for (int i = 0; i < n; i++) { // O(N) -> O(1)
+            grids.add(new HashSet<>()); // O(1)
+            rows.add(new HashSet<>()); // O(1)
+            cols.add(new HashSet<>()); // O(1)
         }
         
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                char val = board[i][j];
+        for (int i = 0; i < n; i++) { // O(N) -> O(1)
+            for (int j = 0; j < n; j++) { // O(N) -> O(1)
+                char val = board[i][j]; // O(1)
               
-                if (val == '.') continue;
+                if (val == '.') continue; // O(1)
               
-                int k = (i / 3) * 3 + (j / 3);
+                int k = (i / 3) * 3 + (j / 3); // O(1)
               
-                if (grids.get(k).contains(val)) return false;
-                if (rows.get(i).contains(val)) return false;
-                if (cols.get(j).contains(val)) return false;          
+                if (grids.get(k).contains(val)) return false; // O(1)
+                if (rows.get(i).contains(val)) return false; // O(1)
+                if (cols.get(j).contains(val)) return false; // O(1)
 
-                grids.get(k).add(val);
-                rows.get(i).add(val);
-                cols.get(j).add(val);
+                grids.get(k).add(val); // O(1)
+                rows.get(i).add(val); // O(1)
+                cols.get(j).add(val); // O(1)
             }
         }
         
-        return true;
+        return true; // O(1)
     }
 }
