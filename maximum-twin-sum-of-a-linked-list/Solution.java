@@ -9,32 +9,32 @@
  * }
  */
 class Solution {
-    public int pairSum(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head.next;
-        ListNode tail = null;
-        int maxTwinSum = 0;
+    public int pairSum(ListNode head) { // O(N)
+        ListNode slow = head; // O(1)
+        ListNode fast = head.next; // O(1)
+        ListNode tail = null; // O(1)
+        int maxTwinSum = 0; // O(1)
 
-        while (fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+        while (fast != null && fast.next != null) { // O(N)
+            slow = slow.next; // O(1)
+            fast = fast.next.next; // O(1)
         }
 
-        while (slow != null) {
-            ListNode newNode = new ListNode(slow.val, tail);
-            tail = newNode;
+        while (slow != null) { // O(N / 2)
+            ListNode newNode = new ListNode(slow.val, tail); // O(1)
+            tail = newNode; // O(1)
 
-            slow = slow.next;
+            slow = slow.next; // O(1)
         }
 
-        while (tail != null) {
-            int twinSum = head.val + tail.val;
-            maxTwinSum = Math.max(twinSum, maxTwinSum);
+        while (tail != null) { // O(N / 2)
+            int twinSum = head.val + tail.val; // O(1)
+            maxTwinSum = Math.max(twinSum, maxTwinSum); // O(1)
 
-            head = head.next;
-            tail = tail.next;
+            head = head.next; // O(1)
+            tail = tail.next; // O(1)
         }
 
-        return maxTwinSum;
+        return maxTwinSum; // O(1)
     }
 }
