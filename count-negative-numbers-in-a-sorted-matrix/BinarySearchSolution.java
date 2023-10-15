@@ -1,4 +1,4 @@
-class Solution {
+class BinarySearchSolution {
     public int countNegatives(int[][] grid) { // O(N log N)
         int negatives = 0; // O(1)
         
