@@ -1,23 +1,23 @@
 class BinarySearchSolution {
-    public int mySqrt(int x) {
-        if (x < 2) return x;
+    public int mySqrt(int x) { // O(log N)
+        if (x < 2) return x; // O(1)
         
-        int left = 2, right = x / 2, mid;
-        long square;
+        int left = 2, right = x / 2, mid; // O(1)
+        long square; // O(1)
         
-        while (left <= right) {
-            mid = left + (right - left) / 2;
-            square = (long) mid * mid;
+        while (left <= right) { // O(log N)
+            mid = left + (right - left) / 2; // O(1)
+            square = (long) mid * mid; // O(1)
             
-            if (square == x) {
-                return mid;
-            } else if (square < x) {
-                left = mid + 1;
+            if (square == x) { // O(1)
+                return mid; // O(1)
+            } else if (square < x) { // O(1)
+                left = mid + 1; // O(1)
             } else {
-                right = mid - 1;
+                right = mid - 1; // O(1)
             }
         }
         
-        return right;
+        return right; // O(1)
     }
 }
