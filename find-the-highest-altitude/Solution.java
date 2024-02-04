@@ -1,12 +1,12 @@
 class Solution {
-    public int largestAltitude(int[] gain) {
-        int altitude = 0, largestAltitude = altitude;
+    public int largestAltitude(int[] gain) { // O(N)
+        int altitude = 0, largestAltitude = altitude; // O(1)
 
-        for (int netGain : gain) {
-            altitude += netGain;
-            largestAltitude = Math.max(largestAltitude, altitude);
+        for (int netGain : gain) { // O(N)
+            altitude += netGain; // O(1)
+            largestAltitude = Math.max(largestAltitude, altitude); // O(1)
         }
 
-        return largestAltitude;
+        return largestAltitude; // O(1)
     }
 }
