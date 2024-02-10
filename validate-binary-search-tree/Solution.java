@@ -14,17 +14,17 @@
  * }
  */
 class Solution {
-    public boolean isValidBST(TreeNode root) {
-        return dfs(root, null, null);
+    public boolean isValidBST(TreeNode root) { // O(N)
+        return dfs(root, null, null); // O(N)
     }
     
-    private boolean dfs(TreeNode node, Integer lowerBound, Integer upperBound) {
-        if (node == null) return true;
+    private boolean dfs(TreeNode node, Integer lowerBound, Integer upperBound) { // O(N)
+        if (node == null) return true; // O(1)
         
-        boolean invalidLowerBound = lowerBound != null && lowerBound >= node.val;
-        boolean invalidUpperBound = upperBound != null && upperBound <= node.val;
-        if (invalidLowerBound || invalidUpperBound) return false;
+        boolean invalidLowerBound = lowerBound != null && lowerBound >= node.val; // O(1)
+        boolean invalidUpperBound = upperBound != null && upperBound <= node.val; // O(1)
+        if (invalidLowerBound || invalidUpperBound) return false; // O(1)
         
-        return dfs(node.left, lowerBound, node.val) && dfs(node.right, node.val, upperBound);
+        return dfs(node.left, lowerBound, node.val) && dfs(node.right, node.val, upperBound); // O(N)
     }
 }
