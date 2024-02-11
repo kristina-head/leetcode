@@ -8,18 +8,18 @@
  * }
  */
 class Solution {
-    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-        TreeNode successor = null;
+    public TreeNode inorderSuccessor(TreeNode root, TreeNode p) { // O(log N) for a balanced tree. O(N) for an unbalanced tree
+        TreeNode successor = null; // O(1)
 
-        while (root != null) {
-            if (root.val <= p.val) {
-                root = root.right;
+        while (root != null) { // O(log N) or O(N) depending on tree structure
+            if (root.val <= p.val) { // O(1)
+                root = root.right; // O(1)
             } else {
-                successor = root;
-                root = root.left;
+                successor = root; // O(1)
+                root = root.left; // O(1)
             }
         }
 
-        return successor;
+        return successor; // O(1)
     }
 }
